@@ -1,8 +1,5 @@
-import { useContext, useEffect, useState } from "react";
 import Post from "./Post";
-import { PostList as PostListData } from "../Store/post-list-store";
 import WelcomeMessage from "./WelcomeMessage";
-import LoadingSpinner from "./LoadingSpinner";
 import { useLoaderData } from "react-router-dom";
 const PostList = () => {
   const postList = useLoaderData();

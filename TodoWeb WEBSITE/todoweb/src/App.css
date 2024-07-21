@@ -1,0 +1,43 @@
+form {
+    display: flex;
+    width: 85vw;
+    margin: auto;
+}
+
+
+form input {
+    border: 4px #000000 solid;
+    width: 60vw;
+    
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+form button {
+    height: 40px;
+    width: 20vw;
+    border: 4px black solid;
+    
+}
+
+.DisplayTodolist {
+    margin: auto;
+    width: 80vw;
+    background-color: #000000 ;  
+}
+.DisplayTodolist ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+
+}
+.DisplayTodolist ul li{
+    text-align: left;
+    cursor: pointer;
+}
+.completetodo{
+    text-decoration: line-through;
+    color: rgb(105, 222, 10);
+    background-color: azure;
+}

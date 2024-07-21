@@ -1,7 +1,11 @@
 import { Form, redirect } from "react-router-dom";
+import { useContext } from "react";
+import { PostList } from "../Store/post-list-store";
 
 const CreatePost = () => {
-  // const { addPost } = useContext(PostList);
+  const { addPost } = useContext(PostList);
+
+  
 
   return (
     <Form method="POST" className="create-post">
@@ -71,13 +75,15 @@ const CreatePost = () => {
         />
       </div>
 
-      <button type="submit" className="btn btn-primary">
+      <button type="submit"  className="btn btn-primary">
         Post
       </button>
     </Form>
   );
 };
+
 export async function createPostAction(data) {
+
   const formData = await data.request.formData();
   const postData = Object.fromEntries(formData);
   postData.tags = postData.tags.split("");
@@ -86,11 +92,13 @@ export async function createPostAction(data) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(postData),
   })
-    .then((res) => res.json())
-    .then((post) => {
-      console.log(post);
-    });
-  return redirect("/");
+  .then((res) => res.json())
+  .then((post) => {
+    console.log(post)
+    addPost(post);
+  });
+return redirect("/");
 }
+ 
 
 export default CreatePost;

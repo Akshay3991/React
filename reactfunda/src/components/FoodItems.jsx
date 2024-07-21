@@ -1,16 +1,20 @@
 import { useState } from "react";
 import Items from "./Items";
+import { useContext } from "react";
+import { AppState } from "../App";
 
-const FoodItems = ({ items }) => {
+
+const FoodItems = () => {
+    const Appdata = useContext(AppState)
     let [activeItems, setActiveItems] = useState([]);
     let onBuyButton = (item, event) =>{
         let newItems = [...activeItems ,item];
         setActiveItems(newItems);
         
     }
-    return (
+      return (
         <ul className='list-group'>
-            {items.map((item) => (
+            {Appdata.map((item) => (
                 <Items key={item} bought={activeItems.includes(item)} FoodItem={item} handleBuyButton={(event) => onBuyButton(item, event)}></Items>
             ))}
         </ul>

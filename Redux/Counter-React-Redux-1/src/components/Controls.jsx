@@ -39,11 +39,11 @@ const Controls = () => {
                 <button type="button" onClick={handlePrivacyToggle} className="btn btn-info btn-lg px-4">Privacy Toggle</button>
 
             </div>
-            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center control-row">
+            {/* <div className="d-grid gap-2 d-sm-flex justify-content-sm-center control-row">
                 <input type="text" ref={inputElement} placeholder="Enter number" className="number-input" />
                 <button type="button" onClick={handleAdd} className="btn btn-warning btn-lg px-4">Add</button>
                 <button type="button" onClick={handleSubtract} className="btn btn-danger btn-lg px-4">Subtract</button>
-            </div>
+            </div> */}
         </>
     )
 

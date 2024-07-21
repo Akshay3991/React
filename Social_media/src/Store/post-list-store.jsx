@@ -1,4 +1,5 @@
 import { createContext, useCallback, useState, useEffect, useReducer } from "react";
+import { CgLogIn } from "react-icons/cg";
 
 export const PostList = createContext({
   postList: [],
@@ -29,6 +30,7 @@ const PostListProvider = ({ children }) => {
 
 
   const addPost = (post) => {
+    console.log('addpost called')
     dispatchPostList({
       type: "ADD_POST",
       payload: post,
@@ -44,6 +46,7 @@ const PostListProvider = ({ children }) => {
   };
 
   const deletePost = useCallback((postId) => {
+    console.log('deletepost called')
     dispatchPostList({
       type: "DELETE_POST",
       payload: {
