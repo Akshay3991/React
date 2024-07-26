@@ -83,7 +83,6 @@ function App() {
 export default App;
 
 function ProductItems({ pdata, setShowInfoName, showInfoname }) {
-  console.log(showInfoname)
   return (
     <div className="shadow-lg p-4" onClick={(e) => setShowInfoName(e.target.currentSrc.split()[0].split('/')[6].split("%"))} >
       <img src={pdata.thumbnail} className='p-2 w-[100%] bg-[white] h-[220px]' alt="" />
